@@ -39,3 +39,11 @@ flutter:
 
   assets:
     - assets/
+  fonts:
+    - family: Comfortaa
+      fonts:
+        - asset: assets/fonts/comfortaa/Comfortaa-Bold.ttf
+        - asset: assets/fonts/comfortaa/Comfortaa-Light.ttf
+        - asset: assets/fonts/comfortaa/Comfortaa-Medium.ttf
+        - asset: assets/fonts/comfortaa/Comfortaa-Regular.ttf
+        - asset: assets/fonts/comfortaa/Comfortaa-SemiBold.ttf
