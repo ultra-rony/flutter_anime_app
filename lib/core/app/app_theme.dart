@@ -9,7 +9,7 @@ final ThemeData appTheme = ThemeData(
     headlineLarge: TextStyle(
         fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
     headlineMedium: TextStyle(
-        fontSize: 14, color: Colors.black, fontWeight: FontWeight.bold,),
+        fontSize: 12, color: Colors.black, fontWeight: FontWeight.bold,),
     headlineSmall: TextStyle(fontSize: 14, color: Colors.grey),
   ),
 );

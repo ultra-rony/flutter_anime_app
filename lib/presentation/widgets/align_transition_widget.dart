@@ -27,7 +27,7 @@ class _AlignTransitionWidgetState extends State<AlignTransitionWidget>
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Colors.white,
+      color: Colors.transparent,
       child: AlignTransition(
         alignment: _animation,
         child: Image(

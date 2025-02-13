@@ -49,9 +49,9 @@ class AnimeShortWidget extends StatelessWidget {
                 Row(
                   children: [
                     Icon(
-                      Icons.star,
+                      Icons.star_border,
                       size: 15,
-                      color: Theme.of(context).primaryColor,
+                      // color: Theme.of(context).primaryColor,
                     ),
                     SizedBox(width: 5),
                     Text(
