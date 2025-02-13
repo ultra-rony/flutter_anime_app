@@ -8,7 +8,7 @@ part 'anime_categories_state.dart';
 
 @injectable
 class AnimeCategoriesCubit extends Cubit<AnimeCategoriesState> {
-  AnimeCategoriesCubit(this._getRemoteSortedAnimeUseCase) : super(AnimeCategoriesInitial());
+  AnimeCategoriesCubit(this._getRemoteSortedAnimeUseCase) : super(AnimeCategoriesInitialState());
 
   final GetRemoteSortedAnimeUseCase _getRemoteSortedAnimeUseCase;
 
