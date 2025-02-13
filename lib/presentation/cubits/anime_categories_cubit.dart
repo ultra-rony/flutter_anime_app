@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_anime_app/core/network/network_data_state.dart';
+import 'package:flutter_anime_app/core/utils/constants.dart';
+import 'package:flutter_anime_app/domain/entities/category_entity.dart';
 import 'package:flutter_anime_app/domain/use_cases/get_remote_sorted_anime_use_case.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -15,7 +17,8 @@ class AnimeCategoriesCubit extends Cubit<AnimeCategoriesState> {
   Future<void> onSortedAnime() async {
     final response = await _getRemoteSortedAnimeUseCase();
     if (response is NetworkDataSuccess) {
-      print("testrr: ${response!.data!}");
+      await Future.delayed(Constants.previewAnimatedDuration);
+      emit(AnimeCategoriesSortedAnimeState(response!.data!));
     }
   }
 }
