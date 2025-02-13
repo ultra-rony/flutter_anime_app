@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_anime_app/core/utils/constants.dart';
 
 class PreviewWidget extends StatelessWidget {
   const PreviewWidget({super.key});
 
-  static const Duration duration = Duration(seconds: 2);
+  static Duration duration = Constants.previewAnimatedDuration;
   static const Curve curve = Curves.easeIn;
 
   @override
   Widget build(BuildContext context) {
-    return const CustomFadeTransition(duration: duration, curve: curve);
+    return CustomFadeTransition(duration: duration, curve: curve);
   }
 }
 
