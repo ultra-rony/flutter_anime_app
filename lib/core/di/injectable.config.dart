@@ -16,6 +16,8 @@ import 'package:flutter_anime_app/data/data_sources/anime_api_service.dart'
     as _i295;
 import 'package:flutter_anime_app/domain/repositories/anime_repository.dart'
     as _i31;
+import 'package:flutter_anime_app/domain/use_cases/get_remote_sorted_anime_use_case.dart'
+    as _i839;
 import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart'
     as _i398;
 import 'package:get_it/get_it.dart' as _i174;
@@ -36,11 +38,16 @@ extension GetItInjectableX on _i174.GetIt {
     final registerModule = _$RegisterModule();
     gh.factory<_i974.Logger>(() => registerModule.logger);
     gh.factory<_i361.Dio>(() => registerModule.dio);
-    gh.factory<_i398.AnimeCategoriesCubit>(() => _i398.AnimeCategoriesCubit());
     gh.factory<_i295.AnimeApiService>(
         () => _i295.AnimeApiService(gh<_i361.Dio>()));
-    gh.lazySingleton<_i31.AnimeRepository>(
-        () => _i121.AnimeRepositoryImpl(gh<_i295.AnimeApiService>()));
+    gh.lazySingleton<_i31.AnimeRepository>(() => _i121.AnimeRepositoryImpl(
+          gh<_i295.AnimeApiService>(),
+          gh<_i974.Logger>(),
+        ));
+    gh.factory<_i839.GetRemoteSortedAnimeUseCase>(
+        () => _i839.GetRemoteSortedAnimeUseCase(gh<_i31.AnimeRepository>()));
+    gh.factory<_i398.AnimeCategoriesCubit>(() =>
+        _i398.AnimeCategoriesCubit(gh<_i839.GetRemoteSortedAnimeUseCase>()));
     return this;
   }
 }
