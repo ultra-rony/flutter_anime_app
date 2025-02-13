@@ -21,6 +21,8 @@ CategoryEntity _$CategoryEntityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CategoryEntity {
   String? get orientation => throw _privateConstructorUsedError;
+  CategoryHeaderEntity? get headers => throw _privateConstructorUsedError;
+  List<AnimeEntity>? get data => throw _privateConstructorUsedError;
 
   /// Serializes this CategoryEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,7 +40,12 @@ abstract class $CategoryEntityCopyWith<$Res> {
           CategoryEntity value, $Res Function(CategoryEntity) then) =
       _$CategoryEntityCopyWithImpl<$Res, CategoryEntity>;
   @useResult
-  $Res call({String? orientation});
+  $Res call(
+      {String? orientation,
+      CategoryHeaderEntity? headers,
+      List<AnimeEntity>? data});
+
+  $CategoryHeaderEntityCopyWith<$Res>? get headers;
 }
 
 /// @nodoc
@@ -57,13 +64,37 @@ class _$CategoryEntityCopyWithImpl<$Res, $Val extends CategoryEntity>
   @override
   $Res call({
     Object? orientation = freezed,
+    Object? headers = freezed,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
       orientation: freezed == orientation
           ? _value.orientation
           : orientation // ignore: cast_nullable_to_non_nullable
               as String?,
+      headers: freezed == headers
+          ? _value.headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as CategoryHeaderEntity?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<AnimeEntity>?,
     ) as $Val);
+  }
+
+  /// Create a copy of CategoryEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CategoryHeaderEntityCopyWith<$Res>? get headers {
+    if (_value.headers == null) {
+      return null;
+    }
+
+    return $CategoryHeaderEntityCopyWith<$Res>(_value.headers!, (value) {
+      return _then(_value.copyWith(headers: value) as $Val);
+    });
   }
 }
 
@@ -75,7 +106,13 @@ abstract class _$$CategoryEntityImplCopyWith<$Res>
       __$$CategoryEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? orientation});
+  $Res call(
+      {String? orientation,
+      CategoryHeaderEntity? headers,
+      List<AnimeEntity>? data});
+
+  @override
+  $CategoryHeaderEntityCopyWith<$Res>? get headers;
 }
 
 /// @nodoc
@@ -92,12 +129,22 @@ class __$$CategoryEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? orientation = freezed,
+    Object? headers = freezed,
+    Object? data = freezed,
   }) {
     return _then(_$CategoryEntityImpl(
       orientation: freezed == orientation
           ? _value.orientation
           : orientation // ignore: cast_nullable_to_non_nullable
               as String?,
+      headers: freezed == headers
+          ? _value.headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as CategoryHeaderEntity?,
+      data: freezed == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<AnimeEntity>?,
     ));
   }
 }
@@ -105,17 +152,30 @@ class __$$CategoryEntityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CategoryEntityImpl implements _CategoryEntity {
-  const _$CategoryEntityImpl({this.orientation});
+  const _$CategoryEntityImpl(
+      {this.orientation, this.headers, final List<AnimeEntity>? data})
+      : _data = data;
 
   factory _$CategoryEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$CategoryEntityImplFromJson(json);
 
   @override
   final String? orientation;
+  @override
+  final CategoryHeaderEntity? headers;
+  final List<AnimeEntity>? _data;
+  @override
+  List<AnimeEntity>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'CategoryEntity(orientation: $orientation)';
+    return 'CategoryEntity(orientation: $orientation, headers: $headers, data: $data)';
   }
 
   @override
@@ -124,12 +184,15 @@ class _$CategoryEntityImpl implements _CategoryEntity {
         (other.runtimeType == runtimeType &&
             other is _$CategoryEntityImpl &&
             (identical(other.orientation, orientation) ||
-                other.orientation == orientation));
+                other.orientation == orientation) &&
+            (identical(other.headers, headers) || other.headers == headers) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, orientation);
+  int get hashCode => Object.hash(runtimeType, orientation, headers,
+      const DeepCollectionEquality().hash(_data));
 
   /// Create a copy of CategoryEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -149,14 +212,20 @@ class _$CategoryEntityImpl implements _CategoryEntity {
 }
 
 abstract class _CategoryEntity implements CategoryEntity {
-  const factory _CategoryEntity({final String? orientation}) =
-      _$CategoryEntityImpl;
+  const factory _CategoryEntity(
+      {final String? orientation,
+      final CategoryHeaderEntity? headers,
+      final List<AnimeEntity>? data}) = _$CategoryEntityImpl;
 
   factory _CategoryEntity.fromJson(Map<String, dynamic> json) =
       _$CategoryEntityImpl.fromJson;
 
   @override
   String? get orientation;
+  @override
+  CategoryHeaderEntity? get headers;
+  @override
+  List<AnimeEntity>? get data;
 
   /// Create a copy of CategoryEntity
   /// with the given fields replaced by the non-null parameter values.

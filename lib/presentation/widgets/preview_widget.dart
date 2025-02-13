@@ -59,8 +59,15 @@ class _CustomFadeTransitionState extends State<CustomFadeTransition>
       color: Colors.transparent,
       child: FadeTransition(
         opacity: _animation,
-        child: Center(
-          child: Image(image: AssetImage('assets/intro.gif')),
+        child: Stack(
+          children: [
+            Positioned(
+              top: 100,
+              child: Image(
+                image: AssetImage('assets/intro.gif'),
+              ),
+            )
+          ],
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart';
 import 'package:flutter_anime_app/presentation/cubits/bottom_navigation_cubit.dart';
+import 'package:flutter_anime_app/presentation/screens/home_screen.dart';
 import 'package:flutter_anime_app/presentation/widgets/preview_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,11 +10,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class NavigationScreen extends StatelessWidget {
   const NavigationScreen({super.key});
 
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Center(child: Text('Главная', style: optionStyle)),
-    Center(child: Text('🤷‍🤷‍🤷‍🤷‍🤷‍🤷‍', style: optionStyle)),
+    HomeScreen(),
+    Center(child: Text('🤷‍🤷‍🤷‍🤷‍🤷‍🤷‍')),
   ];
 
   @override
@@ -21,17 +20,16 @@ class NavigationScreen extends StatelessWidget {
     final state = context.watch<AnimeCategoriesCubit>().state;
     final navigation = context.watch<BottomNavigationCubit>().state;
     return Scaffold(
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 500),
-        transitionBuilder: (child, animation) => FadeTransition(
-          opacity: animation,
-          child: ScaleTransition(
-            scale: animation,
-            child: child,
-          ),
-        ),
-        child: _buildChildBasedOnState(state, navigation,
-            key: ValueKey(state.runtimeType)),
+      body: Builder(
+        builder: (context) {
+          if (state is AnimeCategoriesInitialState) {
+            return Center(
+              key: key,
+              child: PreviewWidget(),
+            );
+          }
+          return _widgetOptions.elementAt(navigation);
+        },
       ),
       bottomNavigationBar: state is AnimeCategoriesSortedAnimeState ? BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -46,16 +44,5 @@ class NavigationScreen extends StatelessWidget {
         },
       ) : null,
     );
-  }
-
-  Widget _buildChildBasedOnState(AnimeCategoriesState state, int navigation,
-      {required Key key}) {
-    if (state is AnimeCategoriesInitialState) {
-      return Center(
-        key: key,
-        child: PreviewWidget(),
-      );
-    }
-    return _widgetOptions.elementAt(navigation);
   }
 }
