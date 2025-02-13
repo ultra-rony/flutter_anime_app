@@ -15,7 +15,17 @@ class CategoryWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        if (!category.headers!.hide!) Text(category.headers!.title!),
+        if (!category.headers!.hide!)
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Text(
+              category.headers!.title!,
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                color: Theme.of(context).primaryColor,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ),
         SizedBox(
           height: 250,
           child: ListView.builder(
