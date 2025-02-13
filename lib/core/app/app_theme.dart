@@ -1,41 +1,14 @@
 import 'package:flutter/material.dart';
 
 final ThemeData appTheme = ThemeData(
-  brightness: Brightness.light,
-  primaryColor: Color(0xFF2ECC71),
-  primaryColorLight: Color(0xFFBB86FC),
-  primaryColorDark: Color(0xFF3700B3),
-  scaffoldBackgroundColor: Color(0xFFecf0f1),
-  cardColor: Colors.white,
-  dividerColor: Colors.grey[300],
+  primaryColor: Colors.blueAccent,
+  // scaffoldBackgroundColor: Color(0xFFecf0f1),
+  scaffoldBackgroundColor: Colors.white,
   appBarTheme: AppBarTheme(
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
     titleTextStyle: TextStyle(color: Colors.white),
-    backgroundColor: Color(0xFF2ECC71),
-  ),
-  colorScheme: ColorScheme.fromSwatch(
-    primarySwatch: Colors.green,
-    accentColor: Colors.greenAccent,
-  ),
-  inputDecorationTheme: InputDecorationTheme(
-    hintStyle: TextStyle(color: Colors.grey),
-    labelStyle: TextStyle(
-      color: Color(0xFF2ECC71),
-    ),
-    focusedBorder: UnderlineInputBorder(
-      borderSide: BorderSide(
-        style: BorderStyle.solid,
-        color: Color(0xFF2ECC71),
-      ),
-    ),
-    enabledBorder: UnderlineInputBorder(
-      borderSide: BorderSide(
-        style: BorderStyle.solid,
-        color: Color(0xFF2ECC71),
-      ),
-    ),
   ),
   textTheme: TextTheme(
     headlineLarge: TextStyle(
@@ -53,7 +26,6 @@ final ThemeData appTheme = ThemeData(
     ),
   ),
   buttonTheme: ButtonThemeData(
-    buttonColor: Color(0xFF2ECC71),
     textTheme: ButtonTextTheme.primary,
   ),
 );
