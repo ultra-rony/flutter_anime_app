@@ -54,14 +54,12 @@ class _CustomFadeTransitionState extends State<CustomFadeTransition>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ColoredBox(
-        color: Colors.transparent,
-        child: FadeTransition(
-          opacity: _animation,
-          child: Center(
-            child: Image(image: AssetImage('assets/intro.gif')),
-          ),
+    return ColoredBox(
+      color: Colors.transparent,
+      child: FadeTransition(
+        opacity: _animation,
+        child: Center(
+          child: Image(image: AssetImage('assets/intro.gif')),
         ),
       ),
     );
