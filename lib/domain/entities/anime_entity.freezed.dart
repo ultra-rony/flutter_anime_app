@@ -25,6 +25,7 @@ mixin _$AnimeEntity {
   String? get img => throw _privateConstructorUsedError;
   AnimeHeadersEntity? get headers => throw _privateConstructorUsedError;
   AnimeRatingEntity? get ratings => throw _privateConstructorUsedError;
+  String? get genres => throw _privateConstructorUsedError;
 
   /// Serializes this AnimeEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,7 +48,8 @@ abstract class $AnimeEntityCopyWith<$Res> {
       String? year,
       String? img,
       AnimeHeadersEntity? headers,
-      AnimeRatingEntity? ratings});
+      AnimeRatingEntity? ratings,
+      String? genres});
 
   $AnimeHeadersEntityCopyWith<$Res>? get headers;
   $AnimeRatingEntityCopyWith<$Res>? get ratings;
@@ -73,6 +75,7 @@ class _$AnimeEntityCopyWithImpl<$Res, $Val extends AnimeEntity>
     Object? img = freezed,
     Object? headers = freezed,
     Object? ratings = freezed,
+    Object? genres = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -95,6 +98,10 @@ class _$AnimeEntityCopyWithImpl<$Res, $Val extends AnimeEntity>
           ? _value.ratings
           : ratings // ignore: cast_nullable_to_non_nullable
               as AnimeRatingEntity?,
+      genres: freezed == genres
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -140,7 +147,8 @@ abstract class _$$AnimeEntityImplCopyWith<$Res>
       String? year,
       String? img,
       AnimeHeadersEntity? headers,
-      AnimeRatingEntity? ratings});
+      AnimeRatingEntity? ratings,
+      String? genres});
 
   @override
   $AnimeHeadersEntityCopyWith<$Res>? get headers;
@@ -166,6 +174,7 @@ class __$$AnimeEntityImplCopyWithImpl<$Res>
     Object? img = freezed,
     Object? headers = freezed,
     Object? ratings = freezed,
+    Object? genres = freezed,
   }) {
     return _then(_$AnimeEntityImpl(
       id: freezed == id
@@ -188,6 +197,10 @@ class __$$AnimeEntityImplCopyWithImpl<$Res>
           ? _value.ratings
           : ratings // ignore: cast_nullable_to_non_nullable
               as AnimeRatingEntity?,
+      genres: freezed == genres
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -196,7 +209,7 @@ class __$$AnimeEntityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AnimeEntityImpl implements _AnimeEntity {
   const _$AnimeEntityImpl(
-      {this.id, this.year, this.img, this.headers, this.ratings});
+      {this.id, this.year, this.img, this.headers, this.ratings, this.genres});
 
   factory _$AnimeEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$AnimeEntityImplFromJson(json);
@@ -211,10 +224,12 @@ class _$AnimeEntityImpl implements _AnimeEntity {
   final AnimeHeadersEntity? headers;
   @override
   final AnimeRatingEntity? ratings;
+  @override
+  final String? genres;
 
   @override
   String toString() {
-    return 'AnimeEntity(id: $id, year: $year, img: $img, headers: $headers, ratings: $ratings)';
+    return 'AnimeEntity(id: $id, year: $year, img: $img, headers: $headers, ratings: $ratings, genres: $genres)';
   }
 
   @override
@@ -226,12 +241,14 @@ class _$AnimeEntityImpl implements _AnimeEntity {
             (identical(other.year, year) || other.year == year) &&
             (identical(other.img, img) || other.img == img) &&
             (identical(other.headers, headers) || other.headers == headers) &&
-            (identical(other.ratings, ratings) || other.ratings == ratings));
+            (identical(other.ratings, ratings) || other.ratings == ratings) &&
+            (identical(other.genres, genres) || other.genres == genres));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, year, img, headers, ratings);
+  int get hashCode =>
+      Object.hash(runtimeType, id, year, img, headers, ratings, genres);
 
   /// Create a copy of AnimeEntity
   /// with the given fields replaced by the non-null parameter values.
@@ -255,7 +272,8 @@ abstract class _AnimeEntity implements AnimeEntity {
       final String? year,
       final String? img,
       final AnimeHeadersEntity? headers,
-      final AnimeRatingEntity? ratings}) = _$AnimeEntityImpl;
+      final AnimeRatingEntity? ratings,
+      final String? genres}) = _$AnimeEntityImpl;
 
   factory _AnimeEntity.fromJson(Map<String, dynamic> json) =
       _$AnimeEntityImpl.fromJson;
@@ -270,6 +288,8 @@ abstract class _AnimeEntity implements AnimeEntity {
   AnimeHeadersEntity? get headers;
   @override
   AnimeRatingEntity? get ratings;
+  @override
+  String? get genres;
 
   /// Create a copy of AnimeEntity
   /// with the given fields replaced by the non-null parameter values.

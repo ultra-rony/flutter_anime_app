@@ -14,6 +14,7 @@ class AnimeEntity with _$AnimeEntity {
     String? img,
     AnimeHeadersEntity? headers,
     AnimeRatingEntity? ratings,
+    String? genres,
   }) = _AnimeEntity;
 
   factory AnimeEntity.fromJson(Map<String, Object?> json) =>

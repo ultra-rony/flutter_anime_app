@@ -18,6 +18,7 @@ _$AnimeEntityImpl _$$AnimeEntityImplFromJson(Map<String, dynamic> json) =>
       ratings: json['ratings'] == null
           ? null
           : AnimeRatingEntity.fromJson(json['ratings'] as Map<String, dynamic>),
+      genres: json['genres'] as String?,
     );
 
 Map<String, dynamic> _$$AnimeEntityImplToJson(_$AnimeEntityImpl instance) =>
@@ -27,4 +28,5 @@ Map<String, dynamic> _$$AnimeEntityImplToJson(_$AnimeEntityImpl instance) =>
       'img': instance.img,
       'headers': instance.headers,
       'ratings': instance.ratings,
+      'genres': instance.genres,
     };

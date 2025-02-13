@@ -20,16 +20,19 @@ class NavigationScreen extends StatelessWidget {
     final state = context.watch<AnimeCategoriesCubit>().state;
     final navigation = context.watch<BottomNavigationCubit>().state;
     return Scaffold(
-      body: Builder(
-        builder: (context) {
-          if (state is AnimeCategoriesInitialState) {
-            return Center(
-              key: key,
-              child: PreviewWidget(),
-            );
-          }
-          return _widgetOptions.elementAt(navigation);
-        },
+      body: SafeArea(
+        top: true,
+        child: Builder(
+          builder: (context) {
+            if (state is AnimeCategoriesInitialState) {
+              return Center(
+                key: key,
+                child: PreviewWidget(),
+              );
+            }
+            return _widgetOptions.elementAt(navigation);
+          },
+        ),
       ),
       bottomNavigationBar: state is AnimeCategoriesSortedAnimeState ? BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -38,7 +41,6 @@ class NavigationScreen extends StatelessWidget {
               icon: Icon(Icons.error_outline), label: '🤷‍🤷‍🤷‍🤷‍🤷‍🤷‍'),
         ],
         currentIndex: navigation,
-        selectedItemColor: Colors.amber[800],
         onTap: (index) {
           context.read<BottomNavigationCubit>().setIndex(index);
         },
