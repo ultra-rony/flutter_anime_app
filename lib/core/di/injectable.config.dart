@@ -16,10 +16,14 @@ import 'package:flutter_anime_app/data/data_sources/anime_api_service.dart'
     as _i295;
 import 'package:flutter_anime_app/domain/repositories/anime_repository.dart'
     as _i31;
+import 'package:flutter_anime_app/domain/use_cases/get_remote_anime_use_case.dart'
+    as _i103;
 import 'package:flutter_anime_app/domain/use_cases/get_remote_sorted_anime_use_case.dart'
     as _i839;
 import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart'
     as _i398;
+import 'package:flutter_anime_app/presentation/cubits/anime_long_cubit.dart'
+    as _i898;
 import 'package:flutter_anime_app/presentation/cubits/bottom_navigation_cubit.dart'
     as _i359;
 import 'package:get_it/get_it.dart' as _i174;
@@ -50,8 +54,12 @@ extension GetItInjectableX on _i174.GetIt {
         ));
     gh.factory<_i839.GetRemoteSortedAnimeUseCase>(
         () => _i839.GetRemoteSortedAnimeUseCase(gh<_i31.AnimeRepository>()));
+    gh.factory<_i103.GetRemoteAnimeUseCase>(
+        () => _i103.GetRemoteAnimeUseCase(gh<_i31.AnimeRepository>()));
     gh.factory<_i398.AnimeCategoriesCubit>(() =>
         _i398.AnimeCategoriesCubit(gh<_i839.GetRemoteSortedAnimeUseCase>()));
+    gh.factory<_i898.AnimeLongCubit>(
+        () => _i898.AnimeLongCubit(gh<_i103.GetRemoteAnimeUseCase>()));
     return this;
   }
 }

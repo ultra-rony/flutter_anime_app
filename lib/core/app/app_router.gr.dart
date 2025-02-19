@@ -10,6 +10,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i3;
+import 'package:flutter/material.dart' as _i4;
 import 'package:flutter_anime_app/presentation/screens/choose_screen.dart'
     as _i1;
 import 'package:flutter_anime_app/presentation/screens/navigation_screen.dart'
@@ -17,18 +18,39 @@ import 'package:flutter_anime_app/presentation/screens/navigation_screen.dart'
 
 /// generated route for
 /// [_i1.ChooseScreen]
-class ChooseRoute extends _i3.PageRouteInfo<void> {
-  const ChooseRoute({List<_i3.PageRouteInfo>? children})
-    : super(ChooseRoute.name, initialChildren: children);
+class ChooseRoute extends _i3.PageRouteInfo<ChooseRouteArgs> {
+  ChooseRoute({
+    _i4.Key? key,
+    required String animeId,
+    List<_i3.PageRouteInfo>? children,
+  }) : super(
+         ChooseRoute.name,
+         args: ChooseRouteArgs(key: key, animeId: animeId),
+         initialChildren: children,
+       );
 
   static const String name = 'ChooseRoute';
 
   static _i3.PageInfo page = _i3.PageInfo(
     name,
     builder: (data) {
-      return const _i1.ChooseScreen();
+      final args = data.argsAs<ChooseRouteArgs>();
+      return _i1.ChooseScreen(key: args.key, animeId: args.animeId);
     },
   );
+}
+
+class ChooseRouteArgs {
+  const ChooseRouteArgs({this.key, required this.animeId});
+
+  final _i4.Key? key;
+
+  final String animeId;
+
+  @override
+  String toString() {
+    return 'ChooseRouteArgs{key: $key, animeId: $animeId}';
+  }
 }
 
 /// generated route for
