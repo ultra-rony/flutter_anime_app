@@ -12,4 +12,11 @@ class AnimeApiService {
     _dio.options.headers['Content-Type'] = 'application/json';
     return await _dio.get('${Constants.baseUrl}anime');
   }
+
+  Future<Response> getAnime(String animeId) async {
+    _dio.options.headers['Content-Type'] = 'application/json';
+    return await _dio.get('${Constants.baseUrl}anime/show', data: {
+      'anime_id': animeId,
+    });
+  }
 }

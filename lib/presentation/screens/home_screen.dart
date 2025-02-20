@@ -11,32 +11,30 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.read<AnimeCategoriesCubit>().state;
     final size = MediaQuery.of(context).size;
-    return Expanded(
-      child: Builder(builder: (context) {
-        if (state is AnimeCategoriesSortedAnimeState) {
-          return SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: size.height * 0.2,
-                  child: AlignTransitionWidget(),
-                ),
-                ListView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: state.categories.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return CategoryWidget(category: state.categories[index]);
-                  },
-                ),
-              ],
-            )
-          );
-        }
-        return Center(
-          child: Text("Упс!!"),
+    return Builder(builder: (context) {
+      if (state is AnimeCategoriesSortedAnimeState) {
+        return CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: SizedBox(
+                height: size.height * 0.2,
+                child: AlignTransitionWidget(),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  return CategoryWidget(category: state.categories[index]);
+                },
+                childCount: state.categories.length,
+              ),
+            ),
+          ],
         );
-      }),
-    );
+      }
+      return Center(
+        child: Text("Упс!!"),
+      );
+    });
   }
 }
