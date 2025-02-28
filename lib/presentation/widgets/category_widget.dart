@@ -19,7 +19,7 @@ class CategoryWidget extends StatelessWidget {
       children: [
         if (!category.headers!.hide!)
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Text(
               category.headers!.title!,
               style: Theme.of(context).textTheme.headlineLarge,

@@ -30,7 +30,7 @@ class _AlignTransitionWidgetState extends State<AlignTransitionWidget>
       color: Colors.transparent,
       child: AlignTransition(
         alignment: _animation,
-        child: Image(
+        child: const Image(
           image: AssetImage('assets/run.gif'),
         ),
       ),

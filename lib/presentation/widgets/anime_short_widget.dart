@@ -13,7 +13,7 @@ class AnimeShortWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 10),
+      margin: const EdgeInsets.only(right: 10),
       child: Stack(
         children: [
           SizedBox(
@@ -48,19 +48,19 @@ class AnimeShortWidget extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.star_border,
                       size: 15,
                       // color: Theme.of(context).primaryColor,
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                     Text(
                       anime.ratings?.rating ?? "0",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                     Text(
                       "(${anime.ratings?.votes ?? "0"})",
                       overflow: TextOverflow.ellipsis,
