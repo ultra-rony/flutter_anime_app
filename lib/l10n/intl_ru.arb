@@ -5,5 +5,6 @@
   "rating_text": "Рейтинг",
   "episode_text": "Эпизод",
   "type_text": "Тип",
-  "producer_text": "Продюсер"
+  "producer_text": "Продюсер",
+  "error_access_text": "Упс!"
 }
