@@ -22,23 +22,20 @@ class CategoryWidget extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: Text(
               category.headers!.title!,
-              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.normal,
-                  ),
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ),
         SizedBox(
           height: 250,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            // physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemCount: category.data?.length ?? 0,
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: () {
-                  AutoRouter.of(context).push(ChooseRoute(animeId: category.data![index].id!));
+                  AutoRouter.of(context)
+                      .push(ChooseRoute(animeId: category.data![index].id!));
                 },
                 child: AnimeShortWidget(anime: category.data![index]),
               );
