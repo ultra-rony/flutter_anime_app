@@ -1,0 +1,9 @@
+{
+  "app_name": "FlutterAnimeApp",
+  "bottom_nav_home": "Home",
+  "bottom_nav_profile": "Profile",
+  "rating_text": "Rating",
+  "episode_text": "Episode",
+  "type_text": "Type",
+  "producer_text": "Producer"
+}

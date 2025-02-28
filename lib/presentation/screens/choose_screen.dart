@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_anime_app/generated/l10n.dart';
 import 'package:flutter_anime_app/presentation/cubits/anime_long_cubit.dart';
 import 'package:flutter_anime_app/presentation/widgets/media_details_widget.dart';
 import 'package:flutter_anime_app/presentation/widgets/screenshots_widget.dart';
@@ -74,43 +75,44 @@ class _ChooseScreenState extends State<ChooseScreen> {
                       TitleWidget(title: state.anime.headers?.en ?? ""),
                       const SizedBox(height: 16),
                       Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const SizedBox(width: 8),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Рейтинг"),
-                                Row(
-                                  children: [
-                                    const Icon(Icons.star),
-                                    const SizedBox(width: 8),
-                                    Text(
-                                      "${state.anime.ratings!.rating!} (${state.anime.ratings!.votes!})",
-                                      overflow: TextOverflow.ellipsis,
-                                      maxLines: 1,
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            const SizedBox(width: 20),
-                            MediaDetailsWidget(
-                              title: 'Эпизод',
-                              value: state.anime.sOption ?? "",
-                            ),
-                          ]),
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(width: 8),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(S.of(context).rating_text),
+                              Row(
+                                children: [
+                                  const Icon(Icons.star),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    "${state.anime.ratings!.rating!} (${state.anime.ratings!.votes!})",
+                                    overflow: TextOverflow.ellipsis,
+                                    maxLines: 1,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                          const SizedBox(width: 20),
+                          MediaDetailsWidget(
+                            title: S.of(context).episode_text,
+                            value: state.anime.sOption ?? "",
+                          ),
+                        ],
+                      ),
                       const SizedBox(height: 20),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           MediaDetailsWidget(
-                            title: 'Тип',
+                            title: S.of(context).type_text,
                             value: state.anime.type ?? "",
                           ),
                           const SizedBox(width: 20),
                           MediaDetailsWidget(
-                            title: 'Продюсер',
+                            title: S.of(context).producer_text,
                             value: state.anime.producer ?? "",
                           ),
                         ],
