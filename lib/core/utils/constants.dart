@@ -1,4 +1,4 @@
 class Constants {
-  static String baseUrl = "https://api.rony.fun/";
-  static Duration previewAnimatedDuration = const Duration(seconds: 2);
+  static const String baseUrl = "https://api.rony.fun/";
+  static const Duration previewAnimatedDuration = Duration(seconds: 2);
 }
