@@ -65,12 +65,12 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i974.Logger>(),
           gh<_i588.AnimeLocalApiService>(),
         ));
+    gh.factory<_i337.InsertLocalCategoryUseCase>(
+        () => _i337.InsertLocalCategoryUseCase(gh<_i31.AnimeRepository>()));
     gh.factory<_i839.GetRemoteSortedAnimeUseCase>(
         () => _i839.GetRemoteSortedAnimeUseCase(gh<_i31.AnimeRepository>()));
     gh.factory<_i103.GetRemoteAnimeUseCase>(
         () => _i103.GetRemoteAnimeUseCase(gh<_i31.AnimeRepository>()));
-    gh.factory<_i337.InsertLocalCategoryUseCase>(
-        () => _i337.InsertLocalCategoryUseCase(gh<_i31.AnimeRepository>()));
     gh.factory<_i956.GetLocalCategoriesUseCase>(
         () => _i956.GetLocalCategoriesUseCase(gh<_i31.AnimeRepository>()));
     gh.factory<_i398.AnimeCategoriesCubit>(() => _i398.AnimeCategoriesCubit(
