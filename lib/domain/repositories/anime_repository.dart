@@ -6,4 +6,8 @@ abstract class AnimeRepository {
   Future<NetworkDataState<List<CategoryEntity>>> getSortedAnime();
 
   Future<NetworkDataState<AnimeLongEntity>> getAnime(String animeId);
+
+  Future<List<Map<String, dynamic>>> getLocalAnime();
+
+  Future<void> insertLocalAnime(Map<String, dynamic> row);
 }

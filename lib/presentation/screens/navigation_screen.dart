@@ -25,7 +25,7 @@ class NavigationScreen extends StatelessWidget {
         child: Builder(
           builder: (context) {
             if (state is AnimeCategoriesInitialState) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator()
               );
             }
@@ -37,11 +37,11 @@ class NavigationScreen extends StatelessWidget {
           ? BottomNavigationBar(
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
+                  icon: const Icon(Icons.home),
                   label: S.of(context).bottom_nav_home,
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.error_outline),
+                  icon: const Icon(Icons.error_outline),
                   label: S.of(context).bottom_nav_profile,
                 ),
               ],

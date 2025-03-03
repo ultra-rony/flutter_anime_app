@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_anime_app/core/app/app_router.gr.dart';
+import 'package:flutter_anime_app/core/app/app_routers.gr.dart';
 import 'package:flutter_anime_app/domain/entities/category_entity.dart';
 import 'package:flutter_anime_app/presentation/widgets/anime_short_widget.dart';
 
@@ -19,7 +19,7 @@ class CategoryWidget extends StatelessWidget {
       children: [
         if (!category.headers!.hide!)
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Text(
               category.headers!.title!,
               style: Theme.of(context).textTheme.headlineLarge,

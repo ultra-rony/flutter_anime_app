@@ -99,6 +99,11 @@ class S {
   String get producer_text {
     return Intl.message('Producer', name: 'producer_text', desc: '', args: []);
   }
+
+  /// `Oops!`
+  String get error_access_text {
+    return Intl.message('Oops!', name: 'error_access_text', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

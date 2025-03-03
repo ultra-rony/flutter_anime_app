@@ -5,5 +5,6 @@
   "rating_text": "Rating",
   "episode_text": "Episode",
   "type_text": "Type",
-  "producer_text": "Producer"
+  "producer_text": "Producer",
+  "error_access_text": "Oops!"
 }

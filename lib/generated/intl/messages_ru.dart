@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "bottom_nav_home": MessageLookupByLibrary.simpleMessage("Главная"),
     "bottom_nav_profile": MessageLookupByLibrary.simpleMessage("Профиль"),
     "episode_text": MessageLookupByLibrary.simpleMessage("Эпизод"),
+    "error_access_text": MessageLookupByLibrary.simpleMessage("Упс!"),
     "producer_text": MessageLookupByLibrary.simpleMessage("Продюсер"),
     "rating_text": MessageLookupByLibrary.simpleMessage("Рейтинг"),
     "type_text": MessageLookupByLibrary.simpleMessage("Тип"),

@@ -57,7 +57,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
                         ),
                         Positioned.fill(
                           child: Container(
-                            margin: EdgeInsets.all(30),
+                            margin: const EdgeInsets.all(30),
                             child: CachedNetworkImage(
                               imageUrl: state.anime.img ?? "",
                               fit: BoxFit.scaleDown,

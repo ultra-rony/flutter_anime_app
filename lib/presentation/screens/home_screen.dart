@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_anime_app/generated/l10n.dart';
 import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart';
 import 'package:flutter_anime_app/presentation/widgets/align_transition_widget.dart';
 import 'package:flutter_anime_app/presentation/widgets/category_widget.dart';
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
             SliverToBoxAdapter(
               child: SizedBox(
                 height: size.height * 0.2,
-                child: AlignTransitionWidget(),
+                child: const AlignTransitionWidget(),
               ),
             ),
             SliverList(
@@ -33,7 +34,7 @@ class HomeScreen extends StatelessWidget {
         );
       }
       return Center(
-        child: Text("Упс!!"),
+        child: Text(S.of(context).error_access_text),
       );
     });
   }
