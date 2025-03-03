@@ -26,12 +26,17 @@ class _AlignTransitionWidgetState extends State<AlignTransitionWidget>
 
   @override
   Widget build(BuildContext context) {
+    Theme.of(context).brightness;
     return ColoredBox(
       color: Colors.transparent,
       child: AlignTransition(
         alignment: _animation,
-        child: const Image(
-          image: AssetImage('assets/run.gif'),
+        child: Image(
+          image: AssetImage(
+            Theme.of(context).brightness == Brightness.light
+                ? 'assets/run.gif'
+                : 'assets/run_dark.gif',
+          ),
         ),
       ),
     );
