@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_anime_app/core/app/app_router.gr.dart';
+import 'package:flutter_anime_app/core/app/app_routers.gr.dart';
 import 'package:flutter_anime_app/domain/entities/category_entity.dart';
 import 'package:flutter_anime_app/presentation/widgets/anime_short_widget.dart';
 

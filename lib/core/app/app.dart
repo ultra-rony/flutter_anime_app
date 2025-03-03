@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_anime_app/core/app/app_router.dart';
-import 'package:flutter_anime_app/core/app/app_theme.dart';
+import 'package:flutter_anime_app/core/app/app_routers.dart';
+import 'package:flutter_anime_app/core/app/app_themes.dart';
 import 'package:flutter_anime_app/core/di/injectable.dart';
 import 'package:flutter_anime_app/generated/l10n.dart';
 import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart';
@@ -21,7 +21,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final appRouter = AppRouter();
+    final appRouter = AppRouters();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -36,7 +36,9 @@ class App extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        theme: appTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
         routerConfig: appRouter.config(),
       ),
