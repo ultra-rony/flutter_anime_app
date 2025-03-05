@@ -1,5 +1,3 @@
-import 'package:dio/dio.dart';
-
 abstract class NetworkDataState<T> {
   final T? data;
   final String? error;
