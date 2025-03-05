@@ -1,8 +1,6 @@
-import 'package:dio/dio.dart';
-
 abstract class NetworkDataState<T> {
   final T? data;
-  final DioException? error;
+  final String? error;
 
   const NetworkDataState({this.data, this.error});
 }
@@ -12,5 +10,5 @@ class NetworkDataSuccess<T> extends NetworkDataState<T> {
 }
 
 class NetworkDataFailed<T> extends NetworkDataState<T> {
-  const NetworkDataFailed(DioException error) : super(error: error);
+  const NetworkDataFailed(String error) : super(error: error);
 }
