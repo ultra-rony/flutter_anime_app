@@ -11,5 +11,5 @@ Anime recommendation app.
         - Возможность посмотреть какие еще работы создала этот издатель, списки авторов
         - Страничка для каждого из персонажей аниме, галерея скриншотов
     Это бесплатное фанатское приложение созданное в развлекательных целях.<br>
-   <span style="font-size: 0.9em">Полная версия <a href="https://apps.apple.com/ru/app/rony/id6550923397?platform=iphone">repository</a>тут </span>
+   <span style="font-size: 0.9em">Полная старая версия тут <a href="https://apps.apple.com/ru/app/rony/id6550923397?platform=iphone">AppStore</a></span>
 </p>
