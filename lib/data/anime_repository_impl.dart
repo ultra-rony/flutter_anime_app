@@ -36,10 +36,10 @@ class AnimeRepositoryImpl extends AnimeRepository {
         error: httpResponse.statusMessage,
         response: httpResponse,
         requestOptions: httpResponse.requestOptions,
-      ));
+      ).toString());
     } on DioException catch (e) {
       _logger.e("Error while fetching anime", error: e);
-      return NetworkDataFailed(e);
+      return NetworkDataFailed(e.toString());
     }
   }
 
@@ -55,10 +55,10 @@ class AnimeRepositoryImpl extends AnimeRepository {
         error: httpResponse.statusMessage,
         response: httpResponse,
         requestOptions: httpResponse.requestOptions,
-      ));
+      ).toString());
     } on DioException catch (e) {
       _logger.e("Error while fetching anime", error: e);
-      return NetworkDataFailed(e);
+      return NetworkDataFailed(e.toString());
     }
   }
 
