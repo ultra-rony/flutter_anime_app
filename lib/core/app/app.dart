@@ -5,13 +5,13 @@ import 'package:flutter_anime_app/core/app/app_routers.dart';
 import 'package:flutter_anime_app/core/app/app_themes.dart';
 import 'package:flutter_anime_app/core/di/injectable.dart';
 import 'package:flutter_anime_app/generated/l10n.dart';
-import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart';
+import 'package:flutter_anime_app/presentation/cubits/anime_cubit.dart';
 import 'package:flutter_anime_app/presentation/cubits/anime_long_cubit.dart';
 import 'package:flutter_anime_app/presentation/cubits/bottom_navigation_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 final providers = [
-  BlocProvider<AnimeCategoriesCubit>(create: (context) => getIt<AnimeCategoriesCubit>()..onSortedAnime()),
+  BlocProvider<AnimeCubit>(create: (context) => getIt<AnimeCubit>()..onSortedAnime()),
   BlocProvider<BottomNavigationCubit>(create: (context) => getIt<BottomNavigationCubit>()),
   BlocProvider<AnimeLongCubit>(create: (context) => getIt<AnimeLongCubit>()),
 ];

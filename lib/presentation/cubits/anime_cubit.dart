@@ -8,15 +8,15 @@ import 'package:flutter_anime_app/domain/use_cases/insert_local_category_use_cas
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
-part 'anime_categories_state.dart';
+part 'anime_state.dart';
 
 @injectable
-class AnimeCategoriesCubit extends Cubit<AnimeCategoriesState> {
-  AnimeCategoriesCubit(
+class AnimeCubit extends Cubit<AnimeCubitState> {
+  AnimeCubit(
     this._getRemoteSortedAnimeUseCase,
     this._getLocalCategoriesUseCase,
     this._insertLocalCategoryUseCase,
-  ) : super(AnimeCategoriesInitialState());
+  ) : super(AnimeInitialState());
 
   final GetRemoteSortedAnimeUseCase _getRemoteSortedAnimeUseCase;
   final GetLocalCategoriesUseCase _getLocalCategoriesUseCase;
@@ -26,7 +26,7 @@ class AnimeCategoriesCubit extends Cubit<AnimeCategoriesState> {
     final response = await _getRemoteSortedAnimeUseCase();
     if (response is NetworkDataSuccess) {
       await Future.delayed(Constants.previewAnimatedDuration);
-      emit(AnimeCategoriesSortedAnimeState(response?.data ?? []));
+      emit(AnimeSortedAnimeState(response?.data ?? []));
       final animeLocal = await _getLocalCategoriesUseCase();
       if (animeLocal.isEmpty) {
         final anime = response?.data?.first.data ?? [];
