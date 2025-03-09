@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_anime_app/generated/l10n.dart';
-import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart';
+import 'package:flutter_anime_app/presentation/cubits/anime_cubit.dart';
 import 'package:flutter_anime_app/presentation/cubits/bottom_navigation_cubit.dart';
 import 'package:flutter_anime_app/presentation/screens/home_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,14 +17,14 @@ class NavigationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<AnimeCategoriesCubit>().state;
+    final state = context.watch<AnimeCubit>().state;
     final navigation = context.watch<BottomNavigationCubit>().state;
     return Scaffold(
       body: SafeArea(
         top: true,
         child: Builder(
           builder: (context) {
-            if (state is AnimeCategoriesInitialState) {
+            if (state is AnimeInitialState) {
               return const Center(
                 child: CircularProgressIndicator()
               );
@@ -33,7 +33,7 @@ class NavigationScreen extends StatelessWidget {
           },
         ),
       ),
-      bottomNavigationBar: state is AnimeCategoriesSortedAnimeState
+      bottomNavigationBar: state is AnimeSortedAnimeState
           ? BottomNavigationBar(
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(

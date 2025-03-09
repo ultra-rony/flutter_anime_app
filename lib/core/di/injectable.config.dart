@@ -25,8 +25,8 @@ import 'package:flutter_anime_app/domain/use_cases/get_remote_sorted_anime_use_c
     as _i839;
 import 'package:flutter_anime_app/domain/use_cases/insert_local_category_use_case.dart'
     as _i337;
-import 'package:flutter_anime_app/presentation/cubits/anime_categories_cubit.dart'
-    as _i398;
+import 'package:flutter_anime_app/presentation/cubits/anime_cubit.dart'
+    as _i400;
 import 'package:flutter_anime_app/presentation/cubits/anime_long_cubit.dart'
     as _i898;
 import 'package:flutter_anime_app/presentation/cubits/bottom_navigation_cubit.dart'
@@ -73,7 +73,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i103.GetRemoteAnimeUseCase(gh<_i31.AnimeRepository>()));
     gh.factory<_i956.GetLocalCategoriesUseCase>(
         () => _i956.GetLocalCategoriesUseCase(gh<_i31.AnimeRepository>()));
-    gh.factory<_i398.AnimeCategoriesCubit>(() => _i398.AnimeCategoriesCubit(
+    gh.factory<_i400.AnimeCubit>(() => _i400.AnimeCubit(
           gh<_i839.GetRemoteSortedAnimeUseCase>(),
           gh<_i956.GetLocalCategoriesUseCase>(),
           gh<_i337.InsertLocalCategoryUseCase>(),
