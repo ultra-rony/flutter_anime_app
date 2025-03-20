@@ -35,17 +35,13 @@ jobs:
       - name: Run tests
         run: flutter test
 
-      # 6. Сборка APK (для Android)
-#      - name: Build Android APK
-#        run: flutter build apk --release
-
-      # 7. Сборка IPA (для iOS, требует macOS runner)
-      # - name: Build iOS IPA
-      #   run: flutter build ipa --release
-
-      # 8. Архивация артефактов
-#      - name: Archive APK
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: release-apk
-#          path: build/app/outputs/flutter-apk/app-release.apk
+#      # 6. Установка Fastlane
+#      - name: Install Fastlane
+#        run: |
+#          brew install fastlane
+#
+#      # 7. Выполнение Fastlane iOS Beta
+#      - name: Run Fastlane iOS Beta
+#        run: |
+#          cd ios
+#          fastlane ios beta
