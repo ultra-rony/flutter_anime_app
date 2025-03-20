@@ -44,8 +44,8 @@ jobs:
       #   run: flutter build ipa --release
 
       # 8. Архивация артефактов
-      - name: Archive APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+#      - name: Archive APK
+#        uses: actions/upload-artifact@v3
+#        with:
+#          name: release-apk
+#          path: build/app/outputs/flutter-apk/app-release.apk
